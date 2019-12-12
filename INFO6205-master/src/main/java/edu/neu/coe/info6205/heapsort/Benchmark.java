@@ -1,13 +1,8 @@
 
 
-package edu.com.coe.info6205.heapsort;
+package edu.neu.coe.info6205.heapsort;
 
-import edu.neu.coe.info6205.sort.simple.Helper;
-import edu.neu.coe.info6205.sort.simple.HeapSort;
-import edu.neu.coe.info6205.sort.simple.QuickSort;
-import edu.neu.coe.info6205.sort.simple.SelectionSort;
-import edu.neu.coe.info6205.sort.simple.ShellSort;
-import edu.neu.coe.info6205.sort.simple.Sort;
+
 
 import java.util.Arrays;
 import java.util.Random;
@@ -166,8 +161,8 @@ public class Benchmark<T> {
      */
     public static void main(String[] args) {
         Random random = new Random();
-        int m = 0; // This is the number of repetitions: sufficient to give a good mean value of timing
-        int n = 100; // This is the size of the array
+        int m = 100; // This is the number of repetitions: sufficient to give a good mean value of timing
+        int n = 1000; // This is the size of the array
         for (int k = 0; k < 10; k++) {
             Integer[] array = new Integer[n];
             for (int i = 0; i < n; i++) array[i] = random.nextInt();
@@ -210,7 +205,7 @@ public class Benchmark<T> {
         };
         Benchmark<Integer[]> bm = new Benchmark<>(preFunction, sortFunction, cleanupFunction);
         double x = bm.run(array, m);
-//        System.out.println(name + ": " + x + " millisecs");
+        System.out.println(name + ": " + x + " millisecs");
         System.out.println(name + ": " + helper.toString() );
        ;
         

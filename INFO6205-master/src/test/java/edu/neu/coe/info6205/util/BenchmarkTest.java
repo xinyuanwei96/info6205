@@ -77,7 +77,7 @@ public class BenchmarkTest {
         Integer[] array = new Integer[n];
         for (int i = 0; i < n; i++) array[i] = random.nextInt();
         double ts = benchmarkSort(array, "SelectionSort", new SelectionSort<>(), m);
-        double ti = benchmarkSort(array, "InsertionSort", new HeapSort<>(), m);
+        double ti = benchmarkSort(array, "InsertionSort", new InsertionSort<>(), m);
         // The timing for selection sort and insertion sort should be about the same for random input.
         assertEquals(1, ts / ti, 0.4);
     }

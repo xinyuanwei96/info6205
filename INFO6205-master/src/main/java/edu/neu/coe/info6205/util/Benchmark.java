@@ -144,9 +144,9 @@ public class Benchmark<T> {
      * Everything below this point has to do with a particular example of running a Benchmark
      * for various sort methods.
      * In this case, we time two types of simple sort on a random integer array of length 1000.
- Each test is run 100 times.
-
- NOTE: In order to run this main program, HeapSort and selectionSort must be fully implemented.
+     * Each test is run 100 times.
+     *
+     * NOTE: In order to run this main program, InsertionSort and selectionSort must be fully implemented.
      *
      * @param args the command-line arguments, of which none are significant.
      */
@@ -158,7 +158,7 @@ public class Benchmark<T> {
             Integer[] array = new Integer[n];
             for (int i = 0; i < n; i++) array[i] = random.nextInt();
             // TODO Choose from among the following...
-            benchmarkSort(array, "InsertionSort: " + n, new HeapSort<>(), m);
+            benchmarkSort(array, "InsertionSort: " + n, new InsertionSort<>(), m);
             benchmarkSort(array, "SelectionSort: " + n, new SelectionSort<>(), m);
             benchmarkSort(array, "QuickSort: " + n, new QuickSort_3way<>(), m*2);
             benchmarkSort(array, "MergeSort: " + n, new MergeSortBasic<>(), m*2);

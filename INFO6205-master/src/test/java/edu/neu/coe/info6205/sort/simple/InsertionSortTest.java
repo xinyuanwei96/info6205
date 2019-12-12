@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @SuppressWarnings("ALL")
-public class HeapSortTest {
+public class InsertionSortTest {
 
     @Test
     public void sort() throws Exception {
@@ -24,7 +24,7 @@ public class HeapSortTest {
         list.add(1);
         Integer[] xs = list.toArray(new Integer[0]);
         Helper<Integer> helper = new Helper<>("InsertionSort", xs.length);
-        HeapSort<Integer> sorter = new HeapSort<Integer>(helper);
+        InsertionSort<Integer> sorter = new InsertionSort<Integer>(helper);
         Integer[] ys = sorter.sort(xs);
         assertTrue(helper.sorted(ys));
         System.out.println(sorter.toString());
@@ -42,7 +42,7 @@ public class HeapSortTest {
         final Character[] chars = new Character[charsX.length];
         for (int i=0; i<chars.length; i++) chars[i] = charsX[i];
         Helper<Character> helper = new Quiz6Helper("InsertionSort", chars.length);
-        HeapSort<Character> sorter = new HeapSort<>(helper);
+        InsertionSort<Character> sorter = new InsertionSort<>(helper);
         Character[] sorted = sorter.sort(chars);
         final StringBuilder result = new StringBuilder();
         for (Character x: sorted) result.append(x);

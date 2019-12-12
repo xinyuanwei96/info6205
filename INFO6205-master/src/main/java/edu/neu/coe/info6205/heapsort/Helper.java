@@ -1,6 +1,6 @@
-package edu.com.coe.info6205.heapsort;
+package edu.neu.coe.info6205.heapsort;
 
-import edu.neu.coe.info6205.sort.simple.*;
+
 import java.io.PrintStream;
 import java.lang.reflect.Array;
 import java.util.Arrays;

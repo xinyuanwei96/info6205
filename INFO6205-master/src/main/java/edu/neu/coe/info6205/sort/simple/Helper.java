@@ -77,7 +77,7 @@ public class Helper<X extends Comparable<X>> {
 		 * @param i  the index of the higher element to swap.
 		 */
 		void swap(X[] xs, int lo, int hi, int i) {
-				swap(xs, i - 1, i);
+				swap(xs, lo, hi, i - 1, i);
 		}
 
 		/**
@@ -89,9 +89,10 @@ public class Helper<X extends Comparable<X>> {
 		 * @param i   one of the indices.
 		 * @param j   the other index.
 		 */
-		void swap(X[] xs, int i, int j) {
+		void swap(X[] xs, int lo, int hi, int i, int j) {
 				swaps++;
-				
+				if (i < lo) throw new RuntimeException("i is out of range: i; " + i + "; lo=" + lo);
+				if (j > hi) throw new RuntimeException("j is out of range: j; " + j + "; hi=" + hi);
 				X temp = xs[i];
 				xs[i] = xs[j];
 				xs[j] = temp;
